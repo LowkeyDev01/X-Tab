@@ -25,9 +25,16 @@ body{
     align-items: center;
     height: 80vh;
     width: 70%;
+    background-size: cover;
     background-color: black;
     background-image: url(Bg.webp);
     border-radius: 30px;
+    transition: 0.6s all;
+}
+.desktop-view .main-view:hover{
+    transition: 0.6s;
+    opacity: 0.9;
+    background-position: center;
 }
 .desktop-view #time{
     font-size: 120px;
@@ -63,6 +70,9 @@ body{
 
 /*mobile view*/
 @media(max-width: 768px){
+    body{
+        background: white;
+    }
     .mobile-view{
         display: flex;
         border: 1px solid red;
