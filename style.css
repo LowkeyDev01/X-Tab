@@ -2,120 +2,73 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
-    height: 100vh;
-    background:  linear-gradient(135deg, grey, white);
-    background-repeat: no-repeat;
-    background-size: cover;
     overflow: hidden;
 }
-/*Tab Interface*/
-.outside{
-    height: 80vh;
-    margin: auto;
-    position: relative;
-    margin-top: 4rem;
-    max-width: 65%;
-    border-radius: 25px;
-    background-color: black;
+body{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.14), gray);
 }
-/*The opening page
-    Just image and time displaying
-*/
-.inside{
-    position: absolute;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    top: 7.5%;
-    left: 5%;
-    height: 85%;
-    width: 90%;
-    background-image: url(johnny-briggs-VyDdAGUyVtk-unsplash.jpg);
-    background-position: center;
-    background-size: cover;
-    transition: 0.6s;
-    cursor: pointer;
-    opacity: 0.8;
-}
-.inside:hover{
-    opacity: 0.9;
-    transition: 0.6s;
-}
-.inside h1{
-    color: white;
-    font-size: 150px;
-}
-/*The styling for the log in page*/
-.logIn{
-    position: absolute;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    top: 7.5%;
-    left: 5%;
-    height: 85%;
-    width: 90%;
-    backdrop-filter: blur(30px);
+/*Desktop view*/
+.mobile-view{
     display: none;
 }
-.logIn img{
-    border-radius: 50%;
-}
-.logIn #input{
-    width: 30%;
-    padding: 6px;
-    border-radius: 8px;
-    margin-top: 10px;
-    border: none;
-}
-#button{
-    margin-top: 5px;
-    padding: 2px 20px;
-    border: none;
-    font-size: small;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-#button:hover{
-    border: 1px solid white;
-    transition: 0.3s ease-in-out;
-}
-#wlcm{
-    color: white;
-    margin-top: 5px;
-    font-size: 20px;
-}
-.apps{
-    position: absolute;
-    justify-content: center;
-    text-align: center;
-    background-image: url(ww.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    top: 7.5%;
-    left: 5%;
-    height: 85%;
-    width: 90%;
-    display: none;
-}
-.top{
-    background-color: rgba(0, 0, 0, 0.6);
+.desktop-view{
     display: flex;
-    position: absolute;
-    top: 0px;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     width: 100%;
 }
-.top p{
-    font-size: 15px;
-    color: white;
+.desktop-view .main-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 70%;
+    background-color: black;
+    background-image: url(2c6d15b657a983e7531b9196aa8a11b1.jpg);
+    border-radius: 30px;
+}
+.desktop-view #time{
+    font-size: 120px;
+    font-family: fantasy;
+    background: linear-gradient(to right, rgb(0, 0, 0) 50%, gray 50%, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+#date{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*mobile view*/
+@media(max-width: 768px){
+    .mobile-view{
+        display: flex;
+        border: 1px solid red;
+        height: 100vh;
+    }
+    .desktop-view{
+        display: none;
+    }
 }

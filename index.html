@@ -3,48 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>X-Tab</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!--
-    'Outside' is for the tab interface. It gives the tab its look.
-    'Inside' is the place for the time and date Display
-    'logIn' is for the login section 
-    -->
-    <div class="outside">
-
-        <div class="inside" onclick="great()" id="ww">
-            <h1>13:20</h1>
-        </div>
-
-        <div class="logIn" id="we">
-            <img src="ww.jpg" height="120px" width="120px">
-            <p id="wlcm">Welcome back</p>
-            <input type="text" placeholder="Username.." id="input">
-            <input type="password" placeholder="Password.." id="input">
-            <input type="submit" onclick="good()" id="button" value="Log in" id="button">
-            <p style="color: white; font-size: 14px;">Don't have an account? <a style="text-decoration: underline; color: blue; cursor: pointer;">Sign Up</a></p>
-        </div>
-
-        <div class="apps" id="logged">
-            <div class="top">
-                <p>1:32</p>
-                <p>Log out</p>
-            </div>
-            <div class="app-section"></div>
+    <div class="desktop-view">
+        <div class="main-view">
+                <p id="time"></p>
+                <p id="date">20th October, 2035</p>
         </div>
     </div>
-    <script>
-        function great(){
-            document.getElementById('we').style.display = 'flex';
-        }
-        function good(){
-             document.getElementById('we').style.display = 'none';
-             document.getElementById('ww').style.display = 'none';
-             document.getElementById('logged').style.display = 'flex';
-        }
-    </script>
-
+    <div class="mobile-view"></div>
 </body>
 </html>
