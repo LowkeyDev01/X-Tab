@@ -33,7 +33,7 @@ body{
 }
 .desktop-view .main-view:hover{
     transition: 0.6s;
-    opacity: 0.7;
+    opacity: 0.8;
     background-position: center;
 }
 .desktop-view #time{
@@ -48,6 +48,53 @@ body{
 .desktop-view #date{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
+}
+.desktop-view .login-section{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 70%;
+    background-image: url(loginsec.jpeg);
+    background-position: center;
+    background-size: cover;
+    gap: 10px;
+    background-color: white;
+    border-radius: 30px;
+    transition: 0.6s all;
+}
+.login-section img{
+    border-radius: 50%;
+}
+.login-section [type="text"], [type="password"]{
+    width: 22rem;
+    border: none;
+    padding: 12px;
+    background-color: rgba(128, 128, 128, 0.155);
+    border-radius: 15px;
+}
+.login-section [type="submit"]{
+    border: none;
+    padding: 9px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+.login-section [type="submit"]:hover{
+    background-color: rgba(128, 128, 128, 0.299);
+    color: black;
+}
+.login-section [type="text"]:focus, [type="password"]:focus{
+    border: 1px solid rgba(0, 0, 0, 0.642);
+    outline: none;
+}
+#form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
