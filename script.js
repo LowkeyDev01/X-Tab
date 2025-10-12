@@ -9,7 +9,13 @@ const loginSec = document.getElementById('login-section');
 const formSec = document.getElementById('form-section');
 const msg = document.getElementById('message');
 const userName = document.getElementById('username');
-const movieSec = document.querySelector('.movie-section')
+const movieSec = document.querySelector('.movie-section');
+const addBtn = document.getElementById('add');
+const uploadCard = document.querySelector('.upload-box')
+
+
+
+
 
 //Smooth animation effect for home page
 main.addEventListener('click', () =>{
@@ -32,13 +38,18 @@ formSec.addEventListener('submit', (e) =>{
     const usernameValue = userName.value.trim();
     if (usernameValue == 'admin'){
         msg.textContent = 'Correct✅';
-        msg.style.transition = 'opacity 2s';
-        msg.style.opacity = '0';
+        loginSec.style.transition = 'opacity 1s';
+        loginSec.style.opacity = '0';
         setTimeout(()=>{
             msg.textContent = '';
             loginSec.style.display = 'none';
             movieSec.style.display = 'flex';
-        }, 2000)
+            movieSec.style.transition = 'opacity 1s';
+            movieSec.style.opacity = '0';
+            setTimeout(()=>{
+                movieSec.style.opacity = '1';
+            }, 50)
+        }, 400)
         
     }
     else{
@@ -56,3 +67,12 @@ function timing(){
     newDate.innerHTML = d.getDate() + ',' + monthName + ' ' + d.getFullYear();
 }
 timing();
+
+addBtn.addEventListener('click', () =>{
+    if(uploadCard.style.display === 'none'){
+        uploadCard.style.display = 'flex';
+    }
+    else{
+        uploadCard.style.display = 'none';
+    }
+})
