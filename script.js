@@ -12,7 +12,11 @@ const userName = document.getElementById('username');
 const movieSec = document.querySelector('.movie-section');
 const addBtn = document.getElementById('add');
 const uploadCard = document.querySelector('.upload-box')
-
+const fileCover = document.getElementById('cover');
+const uploadCover = document.getElementById('uploadcover')
+const uploadMovie = document.getElementById('uploadmovie');
+const movieBtn = document.getElementById('moviefile');
+const filePath = document.getElementById('moviesrc');
 
 
 
@@ -74,5 +78,37 @@ addBtn.addEventListener('click', () =>{
     }
     else{
         uploadCard.style.display = 'none';
+    }
+})
+
+uploadCover.addEventListener('click', () =>{
+    fileCover.click();
+})
+
+uploadMovie.addEventListener('click', () =>{
+    movieBtn.click();
+})
+
+fileCover.addEventListener('change', () =>{
+    const coverFile = fileCover.files[0];
+    if (!coverFile) return;
+    if (coverFile && coverFile.type.startsWith("image/")){
+        const url = URL.createObjectURL(coverFile);
+        uploadCover.src = url;
+    }
+    else{
+        uploadCover.src = 'image-37-48.png';
+    }
+})
+
+movieBtn.addEventListener('change', ()=>{
+    const file = movieBtn.files[0];
+    if(!file) return;
+    if (file && file.type.startsWith("video/")){
+        const url = URL.createObjectURL(file);
+        filePath.textContent = url;
+    }
+    else{
+        filePath.textContent = 'shishi no dey o';
     }
 })
