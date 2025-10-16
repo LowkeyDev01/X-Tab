@@ -110,7 +110,7 @@ body{
     justify-content: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     padding: 20px;
     border-bottom: 1px solid black;
 }
@@ -169,7 +169,7 @@ body{
     position: relative;
     padding: 10px;
     height: 280px;
-    width: 200px;
+    background-position: center;
     background-image: url(silent\ voice.jpeg);
     border-radius: 10px;
 }
@@ -287,20 +287,102 @@ input[type="file"]{
         width: 100%;
     }
     .main-view{
+        border-radius: 0px;
         display: flex;
         width: 100%;
         height: 100vh;
     }
     .login-section{
+        border-radius: 0px;
         display: none;
         width: 100%;
-        gap: 20px;
+        gap: 6px;
         height: 100vh;
+    }
+    .login-section img{
+        height: 100px;
+        width: 100px;
     }
     .movie-section{
+        border-radius: 0px;
         display: none;
         width: 100%;
         height: 100vh;
     }
-
+    #time{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 80px;
+        font-weight: bolder;
+    }
+    #date{
+        font-size: 14px;
+    }
+    .login-section [type="text"], [type="password"]{
+    width: 20rem;
+    border: none;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.155);
+    border-radius: 15px;
+}
+.login-section [type="submit"]{
+    border: none;
+    padding: 7px 14px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+#form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+.nav{
+    padding: 10px;
+    grid-template-columns: 1fr 2fr;
+}
+.leave{
+    display: none;
+}
+.name-sec p{
+    font-size: 20px;
+}
+.search-sec input{
+    font-size: 0.7rem;
+    width: 100%;
+}
+.movie-box{
+    flex: 1 1 40%;
+    max-width: 50%;
+    height: 280px;
+}
+.overlay #movie-name{
+    font-size: 16px;
+}
+.upload-box{
+    height: 200px;
+    width: 300px;
+    right: 20px;
+    gap: 10px;
+}
+.upload-box [type="text"]{
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.389);
+    padding: 6px;
+    border-radius: 12px;  
+}
+.upload-box p{
+    font-size: 20px;
+    font-family: cursive;
+}
+.upload-box button{
+    padding: 4px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.389);
+}
+.upload-box button:hover{
+    background: black;
+    color: white;
+}
 }
