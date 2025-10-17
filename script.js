@@ -17,6 +17,7 @@ const uploadCover = document.getElementById('uploadcover')
 const uploadMovie = document.getElementById('uploadmovie');
 const movieBtn = document.getElementById('moviefile');
 const filePath = document.getElementById('moviesrc');
+const leaveBtn = document.getElementById('leave')
 
 
 
@@ -58,6 +59,7 @@ formSec.addEventListener('submit', (e) =>{
     }
     else{
         msg.textContent = 'holup';
+        userName.value = '';
     }
 })
 
@@ -111,4 +113,18 @@ movieBtn.addEventListener('change', ()=>{
     else{
         filePath.textContent = 'shishi no dey o';
     }
+})
+leaveBtn.addEventListener('click', ()=>{
+    movieSec.style.transition = 'opacity 1s';
+        movieSec.style.opacity = '0';
+        userName.value = '';
+        setTimeout(()=>{
+            movieSec.style.display = 'none';
+            loginSec.style.display = 'flex';
+            loginSec.style.transition = 'opacity 1s';
+            loginSec.style.opacity = '0';
+            setTimeout(()=>{
+                loginSec.style.opacity = '1';
+            }, 50)
+        }, 400)
 })
