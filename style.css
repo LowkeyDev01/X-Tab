@@ -16,6 +16,7 @@ body{
     width: 100%;
 }
 .main-view{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,31 +173,22 @@ body{
     background-position: center;
     background-image: url(silent\ voice.jpeg);
     border-radius: 10px;
+    opacity: 1;
+    transition: opacity 1s;
+    position: relative;
 }
-.overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    text-align: center;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    color: white;
-}
-.overlay:hover{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-}
-.overlay #movie-name{
-    font-size: 20px;
+.movie-box:hover{
+    transition: opacity 0.6s;
+    opacity: 0.8;
 }
 .action{
+    position: absolute;
+    bottom: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 8px;
+    width: 90%;
 }
 .uploader{
     font-size: 12px;
@@ -264,8 +256,18 @@ input[type="file"]{
     padding-inline: 15px;
     font-size: 10px;
 }
-
-
+#gee{
+    position: absolute;
+    bottom: 13%;
+    animation-name: gerrat;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes gerrat{
+    0%{bottom: 13%}
+    50%{bottom: 15%;}
+    100%{bottom: 13%;}
+}
 
 
 
