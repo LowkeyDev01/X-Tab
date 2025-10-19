@@ -18,8 +18,9 @@ const uploadMovie = document.getElementById('uploadmovie');
 const movieBtn = document.getElementById('moviefile');
 const filePath = document.getElementById('moviesrc');
 const leaveBtn = document.getElementById('leave')
-
-
+const uploadBtn = document.getElementById('finally');
+const title = document.getElementById('movietitle')
+const video = document.getElementById('video')
 
 
 //Smooth animation effect for home page
@@ -91,12 +92,18 @@ uploadMovie.addEventListener('click', () =>{
     movieBtn.click();
 })
 
+let coverFile;
+let coverUrl;
+let file;
+let url;
+
+
 fileCover.addEventListener('change', () =>{
-    const coverFile = fileCover.files[0];
+    coverFile = fileCover.files[0];
     if (!coverFile) return;
     if (coverFile && coverFile.type.startsWith("image/")){
-        const url = URL.createObjectURL(coverFile);
-        uploadCover.src = url;
+        coverUrl = URL.createObjectURL(coverFile);
+        uploadCover.src = coverUrl;
     }
     else{
         uploadCover.src = 'image-37-48.png';
@@ -104,16 +111,82 @@ fileCover.addEventListener('change', () =>{
 })
 
 movieBtn.addEventListener('change', ()=>{
-    const file = movieBtn.files[0];
+    file = movieBtn.files[0];
     if(!file) return;
     if (file && file.type.startsWith("video/")){
-        const url = URL.createObjectURL(file);
+        url = URL.createObjectURL(file);
         filePath.textContent = url;
     }
     else{
         filePath.textContent = 'shishi no dey o';
     }
 })
+
+let playImg = null;
+let downloadImg = null;
+
+uploadBtn.addEventListener('click', ()=>{
+    if(!file || !coverFile || title.value.trim() === ''){
+        return;
+    }
+    else{
+        const dair = document.createElement('div');
+        dair.classList.add('movie-box');
+        dair.style.backgroundImage = `url(${coverUrl})`
+
+        const cads = document.createElement('p')
+        cads.id = 'maybe';
+        cads.textContent = title.value;
+
+        const details = document.createElement('div')
+        details.classList.add('details');
+
+        playImg = document.createElement('img');
+        playImg.id = 'play-size';
+        playImg.src = 'play-332-64.png';
+        playImg.dataset.url = url;
+
+        downloadImg = document.createElement('img');
+        downloadImg.id = 'download-size';
+        downloadImg.src = 'download-379-64.png';
+        downloadImg.dataset.url = url;
+
+        const action = document.createElement('div');
+        action.className = 'action';
+
+        // attach handlers to the created elements so they exist when listeners run
+        playImg.addEventListener('click', ()=>{
+            video.src = playImg.dataset.url;
+            video.play();
+        });
+
+        downloadImg.addEventListener('click', ()=>{
+            const a = document.createElement('a');
+            a.href = downloadImg.dataset.url;
+            a.download = `${title.value || 'download'}.mp4`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+
+        action.appendChild(playImg);
+        action.appendChild(downloadImg);
+        details.appendChild(cads);
+        details.appendChild(action);
+        dair.appendChild(details);
+        document.querySelector('.movies').appendChild(dair);
+
+        title.value = '';
+        uploadCover.src = 'image-37-48.png';
+        filePath.textContent = '';
+        uploadCard.style.display = 'none';
+    }
+})
+
+
+
+
+
 leaveBtn.addEventListener('click', ()=>{
     movieSec.style.transition = 'opacity 1s';
         movieSec.style.opacity = '0';
