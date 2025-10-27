@@ -13,6 +13,7 @@ body{
     align-items: center;
     height: 100vh;
     width: 100%;
+    
 }
 .main-view{
     position: relative;
@@ -27,6 +28,7 @@ body{
     background-image: url(Bg.webp);
     border-radius: 30px;
     transition: 0.6s all;
+    overflow: auto;
 }
 .main-view:hover{
     transition: 0.6s;
@@ -168,10 +170,10 @@ body{
     flex: 1 1 160px;
     max-width: 190px;
     position: relative;
+    background-image: url(silent\ voice.jpeg);
     padding: 10px;
     height: 280px;
     background-position: center;
-    background-image: url(silent\ voice.jpeg);
     border-radius: 10px;
     opacity: 1;
     transition: opacity 1s;
@@ -213,6 +215,7 @@ body{
     bottom: 30px;
     right: 30px;
     transition: all 0.3s ease-in-out;
+    z-index: 2;
 }
 #add:hover{
     height: 32px;
@@ -228,6 +231,7 @@ body{
     position: absolute;
     border: 1px solid rgba(0, 0, 0, 0.374);
     width: 400px;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     height: 250px;
     border-radius: 15px;
@@ -281,7 +285,7 @@ input[type="file"]{
 }
 .video-box{
     position: absolute;
-    bottom: 70px;
+    bottom: 100px;
     right: 50px;
     justify-content: center;
     flex-direction: column;
@@ -290,6 +294,7 @@ input[type="file"]{
     position: absolute;
     border: 1px solid rgba(0, 0, 0, 0.374);
     width: 300px;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     height: 150px;
     border-radius: 15px;
@@ -416,5 +421,8 @@ input[type="file"]{
 .upload-box button:hover{
     background: black;
     color: white;
+}
+#add{
+    top: 100px;
 }
 }
