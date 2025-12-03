@@ -21,12 +21,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 70%;
+    height: 100vh;
+    width: 100%;
     background-size: cover;
     background-color: black;
     background-image: url(Bg.webp);
-    border-radius: 30px;
     transition: 0.6s all;
     overflow: auto;
 }
@@ -36,8 +35,9 @@ body{
     background-position: center;
 }
 #time{
-    font-size: 120px;
-    font-family: fantasy;
+    font-size: 150px;
+    font-weight: 1000;
+    font-family: sans-serif;
     background: linear-gradient(to right, rgb(0, 0, 0) 50%, gray 50%, red);
     -webkit-background-clip: text;
     background-clip: text;
@@ -53,21 +53,21 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 70%;
+    height: 100vh;
+    width: 100%;
     background-image: url(loginsec.jpeg);
     background-position: center;
     background-size: cover;
     gap: 10px;
     background-color: white;
-    border-radius: 30px;
     transition: 0.6s all;
 }
 .login-section img{
     border-radius: 50%;
 }
 .login-section [type="text"], [type="password"]{
-    width: 22rem;
+    width: 24rem;
+    font-size: 16px;
     border: none;
     padding: 12px;
     background-color: rgba(128, 128, 128, 0.155);
@@ -75,34 +75,39 @@ body{
 }
 .login-section [type="submit"]{
     border: none;
-    padding: 9px 20px;
+    padding: 6px 24px;
     background-color: black;
     color: white;
+    font-size: 14px;
+    border: 1px solid transparent;
     border-radius: 15px;
 }
 .login-section [type="submit"]:hover{
     background-color: rgba(128, 128, 128, 0.299);
     color: black;
+    border: 1px solid rgba(0, 0, 0, 0.642);
 }
 .login-section [type="text"]:focus, [type="password"]:focus{
     border: 1px solid rgba(0, 0, 0, 0.642);
     outline: none;
+}
+#user{
+    font-size: 24px;
 }
 #form-section{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 .movie-section{
     position: relative;
     display: none;
     flex-direction: column;
-    height: 80vh;
-    width: 70%;
+    height: 100vh;
+    width: 100%;
     background-color: whitesmoke;
-    border-radius: 30px;
     transition: 0.6s all;
 }
 .nav{
@@ -128,7 +133,8 @@ body{
     color: transparent;
     -webkit-text-fill-color: transparent;
     font-size: 24px;
-    font-family: fantasy;   
+    font-weight: bold;
+    font-family: sans-serif;   
 }
 .search-sec{
     display: flex;
@@ -224,22 +230,22 @@ body{
 }
 .upload-box{
     display: none;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
     position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.374);
-    width: 400px;
+    width: 100%;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    height: 250px;
-    border-radius: 15px;
-    top: 100px;
-    right: 20px;
+    height: 15%;
+    left: 0;
+    gap: 5px;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 11;
 }
 .upload-box [type="text"]{
-    width: 300px;
+    width: 700px;
     border: 1px solid rgba(0, 0, 0, 0.389);
     padding: 8px;
     border-radius: 15px;  
@@ -250,6 +256,8 @@ body{
 }
 .upload-box button{
     padding: 4px 18px;
+    align-self: center;
+    width: 5%;
     border-radius: 14px;
     border: 1px solid rgba(0, 0, 0, 0.389);
 }
@@ -277,7 +285,7 @@ input[type="file"]{
 }
 #gee{
     position: absolute;
-    bottom: 15%;
+    bottom: 8%;
 }
 #play-size, #download-size{
     width: 25px;
@@ -303,7 +311,16 @@ input[type="file"]{
     width: 100%;
     height: 100%;
 }
-
+.overlay{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: none;
+    border: none;
+    z-index: 3;
+    width: 100%;
+}
 
 
 
@@ -329,6 +346,11 @@ input[type="file"]{
         width: 100%;
         height: 100vh;
     }
+    .main-view:hover{
+        transition: 0.6s;
+        opacity: 1;
+        background-position: unset;
+    }
     .login-section{
         border-radius: 0px;
         display: none;
@@ -348,11 +370,11 @@ input[type="file"]{
     }
     #time{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 80px;
+        font-size: 100px;
         font-weight: bolder;
     }
     #date{
-        font-size: 14px;
+        font-size: 20px;
     }
     .login-section [type="text"], [type="password"]{
     width: 20rem;
@@ -424,5 +446,8 @@ input[type="file"]{
 }
 #add{
     top: 100px;
+}
+#gee{
+    font-size: 12px;
 }
 }

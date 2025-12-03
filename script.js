@@ -3,7 +3,7 @@
 const newTime = document.getElementById('time');
 const newDate = document.getElementById('date');
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
-     'September', 'October', 'November', 'December'];
+    'September', 'October', 'November', 'December'];
 const main = document.getElementById('hii');
 const loginSec = document.getElementById('login-section');
 const formSec = document.getElementById('form-section');
@@ -21,44 +21,45 @@ const leaveBtn = document.getElementById('leave')
 const uploadBtn = document.getElementById('finally');
 const title = document.getElementById('movietitle')
 const video = document.getElementById('video')
+const overlay = document.querySelector('.overlay')
 
 
 //Smooth animation effect for home page
-main.addEventListener('click', () =>{
+main.addEventListener('click', () => {
     main.style.transition = 'opacity 0.6s';
     main.style.opacity = '0';
-    setTimeout(()=>{
+    setTimeout(() => {
         main.style.display = 'none';
         loginSec.style.display = 'flex';
         loginSec.style.transition = 'opacity 1s';
         loginSec.style.opacity = '0';
-        setTimeout(() =>{
+        setTimeout(() => {
             loginSec.style.opacity = '1';
         }, 50);
     }, 200);
 });
 
 //Authentication time!!
-formSec.addEventListener('submit', (e) =>{
+formSec.addEventListener('submit', (e) => {
     e.preventDefault();
     const usernameValue = userName.value.trim();
-    if (usernameValue == 'admin'){
-        msg.textContent = 'Correct✅';
+    if (usernameValue == 'admin') {
+        msg.textContent = '';
         loginSec.style.transition = 'opacity 1s';
         loginSec.style.opacity = '0';
-        setTimeout(()=>{
+        setTimeout(() => {
             msg.textContent = '';
             loginSec.style.display = 'none';
             movieSec.style.display = 'flex';
             movieSec.style.transition = 'opacity 1s';
             movieSec.style.opacity = '0';
-            setTimeout(()=>{
+            setTimeout(() => {
                 movieSec.style.opacity = '1';
+                userName.value = '';
             }, 50)
         }, 400)
-        
     }
-    else{
+    else {
         msg.textContent = 'holup';
         userName.value = '';
     }
@@ -67,7 +68,7 @@ formSec.addEventListener('submit', (e) =>{
 
 //Check tis out!!
 setInterval(timing, 1000);
-function timing(){
+function timing() {
     let d = new Date();
     const monthName = months[d.getMonth()]
     newTime.innerHTML = d.getHours() + ':' + d.getMinutes();
@@ -75,20 +76,24 @@ function timing(){
 }
 timing();
 
-addBtn.addEventListener('click', () =>{
-    if(uploadCard.style.display === 'none'){
-        uploadCard.style.display = 'flex';
-    }
-    else{
-        uploadCard.style.display = 'none';
-    }
+addBtn.addEventListener('click', () => {
+    overlay.style.display = 'block';
+    uploadCard.style.display = 'flex';
+});
+
+overlay.addEventListener('click', () => {
+    uploadCard.style.display = 'none';
+    overlay.style.display = 'none';
+    title.value = ''
+    uploadCover.src = 'image-37-48.png';
+    filePath.textContent = '';
 })
 
-uploadCover.addEventListener('click', () =>{
+uploadCover.addEventListener('click', () => {
     fileCover.click();
 })
 
-uploadMovie.addEventListener('click', () =>{
+uploadMovie.addEventListener('click', () => {
     movieBtn.click();
 })
 
@@ -98,26 +103,26 @@ let file;
 let url;
 
 
-fileCover.addEventListener('change', () =>{
+fileCover.addEventListener('change', () => {
     coverFile = fileCover.files[0];
     if (!coverFile) return;
-    if (coverFile && coverFile.type.startsWith("image/")){
+    if (coverFile && coverFile.type.startsWith("image/")) {
         coverUrl = URL.createObjectURL(coverFile);
         uploadCover.src = coverUrl;
     }
-    else{
+    else {
         uploadCover.src = 'image-37-48.png';
     }
 })
 
-movieBtn.addEventListener('change', ()=>{
+movieBtn.addEventListener('change', () => {
     file = movieBtn.files[0];
-    if(!file) return;
-    if (file && file.type.startsWith("video/")){
+    if (!file) return;
+    if (file && file.type.startsWith("video/")) {
         url = URL.createObjectURL(file);
         filePath.textContent = url;
     }
-    else{
+    else {
         filePath.textContent = 'shishi no dey o';
     }
 })
@@ -125,11 +130,11 @@ movieBtn.addEventListener('change', ()=>{
 let playImg = null;
 let downloadImg = null;
 
-uploadBtn.addEventListener('click', ()=>{
-    if(!file || !coverFile || title.value.trim() === ''){
+uploadBtn.addEventListener('click', () => {
+    if (!file || !coverFile || title.value.trim() === '') {
         return;
     }
-    else{
+    else {
         const dair = document.createElement('div');
         dair.classList.add('movie-box');
         dair.style.backgroundImage = `url(${coverUrl})`
@@ -155,12 +160,12 @@ uploadBtn.addEventListener('click', ()=>{
         action.className = 'action';
 
         // attach handlers to the created elements so they exist when listeners run
-        playImg.addEventListener('click', ()=>{
+        playImg.addEventListener('click', () => {
             video.src = playImg.dataset.url;
             video.play();
         });
 
-        downloadImg.addEventListener('click', ()=>{
+        downloadImg.addEventListener('click', () => {
             const a = document.createElement('a');
             a.href = downloadImg.dataset.url;
             a.download = `${title.value || 'download'}.mp4`;
@@ -180,6 +185,7 @@ uploadBtn.addEventListener('click', ()=>{
         uploadCover.src = 'image-37-48.png';
         filePath.textContent = '';
         uploadCard.style.display = 'none';
+        overlay.style.display = 'none'
     }
 })
 
@@ -187,17 +193,16 @@ uploadBtn.addEventListener('click', ()=>{
 
 
 
-leaveBtn.addEventListener('click', ()=>{
+leaveBtn.addEventListener('click', () => {
     movieSec.style.transition = 'opacity 1s';
-        movieSec.style.opacity = '0';
-        userName.value = '';
-        setTimeout(()=>{
-            movieSec.style.display = 'none';
-            loginSec.style.display = 'flex';
-            loginSec.style.transition = 'opacity 1s';
-            loginSec.style.opacity = '0';
-            setTimeout(()=>{
-                loginSec.style.opacity = '1';
-            }, 50)
-        }, 400)
+    movieSec.style.opacity = '0';
+    setTimeout(() => {
+        movieSec.style.display = 'none';
+        loginSec.style.display = 'flex';
+        loginSec.style.transition = 'opacity 1s';
+        loginSec.style.opacity = '0';
+        setTimeout(() => {
+            loginSec.style.opacity = '1';
+        }, 50)
+    }, 400)
 })
