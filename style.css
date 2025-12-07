@@ -3,451 +3,47 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.14), gray);
-}
-/*Desktop view*/
-.desktop-view{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    
-}
-.main-view{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-color: black;
-    background-image: url(Bg.webp);
-    transition: 0.6s all;
-    overflow: auto;
-}
-.main-view:hover{
-    transition: 0.6s;
-    opacity: 0.8;
-    background-position: center;
-}
-#time{
-    font-size: 150px;
-    font-weight: 1000;
-    font-family: sans-serif;
-    background: linear-gradient(to right, rgb(0, 0, 0) 50%, gray 50%, red);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-#date{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
-}
-.login-section{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+#home{
     background-image: url(loginsec.jpeg);
-    background-position: center;
-    background-size: cover;
-    gap: 10px;
-    background-color: white;
-    transition: 0.6s all;
-}
-.login-section img{
-    border-radius: 50%;
-}
-.login-section [type="text"], [type="password"]{
-    width: 24rem;
-    font-size: 16px;
-    border: none;
-    padding: 12px;
-    background-color: rgba(128, 128, 128, 0.155);
-    border-radius: 15px;
-}
-.login-section [type="submit"]{
-    border: none;
-    padding: 6px 24px;
-    background-color: black;
-    color: white;
-    font-size: 14px;
-    border: 1px solid transparent;
-    border-radius: 15px;
-}
-.login-section [type="submit"]:hover{
-    background-color: rgba(128, 128, 128, 0.299);
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.642);
-}
-.login-section [type="text"]:focus, [type="password"]:focus{
-    border: 1px solid rgba(0, 0, 0, 0.642);
-    outline: none;
-}
-#user{
-    font-size: 24px;
-}
-#form-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 6px;
-}
-.movie-section{
-    position: relative;
-    display: none;
-    flex-direction: column;
     height: 100vh;
     width: 100%;
-    background-color: whitesmoke;
-    transition: 0.6s all;
-}
-.nav{
-    display: grid;
-    width:100%;
-    align-items: center;
-    justify-content: center;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    grid-template-columns: 1fr 2fr 1fr;
-    padding: 20px;
-    border-bottom: 1px solid black;
-}
-.name-sec{
     display: flex;
-    justify-content: flex-start;
+    gap: 150px;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-.name-sec p{
-    background: linear-gradient(to right, rgb(0, 0, 0) 50%, gray 50%, red);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-size: 24px;
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+#top{
+    font-size: 250px;
     font-weight: bold;
-    font-family: sans-serif;   
+    font-family: monospace;
 }
-.search-sec{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-.search-sec input{
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(128, 128, 128, 0.532);
-    padding: 5px;
-}
-.search-sec input:focus{
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.758);
-}
-.leave{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
-    padding-right: 20px;
-}
-.leave img{
-    cursor: pointer;
-}
-.movies{
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    flex-direction: row;
-    gap: 15px;
-    width: 100%;
-    max-height: 100%;
-    padding: 20px;
-}
-.movie-box{
-    border: 1px solid grey;
-    flex: 1 1 160px;
-    max-width: 190px;
-    position: relative;
-    background-image: url(silent\ voice.jpeg);
-    padding: 10px;
-    height: 280px;
-    background-position: center;
-    border-radius: 10px;
-    opacity: 1;
-    transition: opacity 1s;
-    position: relative;
-}
-.movie-box:hover{
-    transition: opacity 0.6s;
-    opacity: 0.8;
-}
-.details{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    bottom: 0px;
-    width: 90%;
-}
-#maybe{
+#sub{
     font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: monospace;
 }
-.action{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 8px;
-    width: 90%;
-}
-.action img{
-    cursor: pointer;
-}
-.uploader{
-    font-size: 12px;
-}
-#add{
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    transition: all 0.3s ease-in-out;
-    z-index: 2;
-}
-#add:hover{
-    height: 32px;
-    width: 32px;
-    transition: 0.3s ease-in-out;
-}
-.upload-box{
-    display: none;
-    position: absolute;
-    width: 100%;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    height: 15%;
-    left: 0;
-    gap: 5px;
-    top: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    z-index: 11;
-}
-.upload-box [type="text"]{
-    width: 700px;
-    border: 1px solid rgba(0, 0, 0, 0.389);
-    padding: 8px;
-    border-radius: 15px;  
-}
-.upload-box p{
-    font-size: 20px;
-    font-family: cursive;
-}
-.upload-box button{
-    padding: 4px 18px;
-    align-self: center;
-    width: 5%;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.389);
-}
-.upload-box button:hover{
-    background: black;
+#loginbtn{
+    padding: 12px 70px;
     color: white;
-}
-.hidden{
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-}
-input[type="file"]{
-    display: none;
-}
-.daa{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-#moviesrc{
-    padding-inline: 15px;
-    font-size: 10px;
-}
-#gee{
-    position: absolute;
-    bottom: 8%;
-}
-#play-size, #download-size{
-    width: 25px;
-    height: 25px;
-}
-.video-box{
-    position: absolute;
-    bottom: 100px;
-    right: 50px;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.374);
-    width: 300px;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    height: 150px;
-    border-radius: 15px;
-}
-.video-box video{
-    width: 100%;
-    height: 100%;
-}
-.overlay{
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    height: 100%;
-    backdrop-filter: blur(10px);
-    display: none;
-    border: none;
-    z-index: 3;
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-/*mobile view*/
-@media(max-width: 768px){
-    body{
-        background: white;
-        overflow: hidden;
-    }
-    .desktop-view{
-        display: flex;
-        height: 100vh;
-        width: 100%;
-    }
-    .main-view{
-        border-radius: 0px;
-        display: flex;
-        width: 100%;
-        height: 100vh;
-    }
-    .main-view:hover{
-        transition: 0.6s;
-        opacity: 1;
-        background-position: unset;
-    }
-    .login-section{
-        border-radius: 0px;
-        display: none;
-        width: 100%;
-        gap: 15px;
-        height: 100vh;
-    }
-    .login-section img{
-        height: 100px;
-        width: 100px;
-    }
-    .movie-section{
-        border-radius: 0px;
-        display: none;
-        width: 100%;
-        height: 100vh;
-    }
-    #time{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 100px;
-        font-weight: bolder;
-    }
-    #date{
-        font-size: 20px;
-    }
-    .login-section [type="text"], [type="password"]{
-    width: 20rem;
-    border: none;
-    padding: 10px;
-    background-color: rgba(128, 128, 128, 0.155);
-    border-radius: 15px;
-}
-.login-section [type="submit"]{
-    border: none;
-    padding: 7px 14px;
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-}
-#form-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 4px;
-}
-.nav{
-    padding: 10px;
-    grid-template-columns: 1fr 2fr;
-}
-.leave{
-    display: none;
-}
-.name-sec p{
-    font-size: 20px;
-}
-.search-sec input{
-    font-size: 0.7rem;
-    width: 100%;
-}
-.movie-box{
-    flex: 1 1 40%;
-    max-width: 50%;
-    height: 280px;
-}
-.overlay #movie-name{
     font-size: 16px;
+    border-radius: 10px;
+    background-color: black;
 }
-.upload-box{
-    height: 200px;
-    width: 300px;
-    right: 20px;
+#btn{
     gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.upload-box [type="text"]{
-    width: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.389);
-    padding: 6px;
-    border-radius: 12px;  
-}
-.upload-box p{
-    font-size: 20px;
-    font-family: cursive;
-}
-.upload-box button{
-    padding: 4px 18px;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.389);
-}
-.upload-box button:hover{
-    background: black;
-    color: white;
-}
-#add{
-    top: 100px;
-}
-#gee{
-    font-size: 12px;
-}
+#btn a{
+    color: blue;
+    text-decoration: none;
 }
