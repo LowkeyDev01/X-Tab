@@ -101,7 +101,7 @@
   font-weight: bold;
   font-family: sans-serif;
 }
-#center input {
+#username, #password{
   width: 100%;
   font-size: 0.8em;
   padding: 8px;

@@ -10,12 +10,8 @@ const check = document.querySelector('#agree')
 //swap function(to avoid repeating)
 function swap(button, currentPage, newPage) {
     button.addEventListener('click', () => {
-        currentPage.style.transition = '0.9s opacity'
-        currentPage.style.opacity = 0
-        setTimeout(() => {
             currentPage.style.display = 'none';
             newPage.style.display = 'flex'
-        }, 900)
     })
 }
 
@@ -27,18 +23,15 @@ swap(signupBtn, homeSec, signUpSec);
 //tiny Auth
 const userName = document.getElementById('username')
 const password = document.getElementById('password')
-const log = document.getElementById('ggs')
 const err = document.getElementById('error')
-log.addEventListener('click', () => {
+const form = document.getElementById('center')
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (userName.value == 'admin' && password.value == 'admin') {
-        loginSec.style.transition = '0.9s opacity'
-        loginSec.style.opacity = 0
-        setTimeout(() => {
             loginSec.style.display = 'none';
             main.style.display = 'flex'
             err.style.display = 'none'
             err.textContent = ''
-        }, 900)
     }
     else {
         err.style.display = 'block'
