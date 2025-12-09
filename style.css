@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 #home {
+  background-image: url(loginsec.jpeg);
   background-position: center;
-  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -24,7 +24,8 @@
   flex-direction: column;
 }
 #logo img{
-  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
 }
 #top {
   font-size: 250px;
