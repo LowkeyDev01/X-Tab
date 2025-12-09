@@ -24,13 +24,8 @@
   flex-direction: column;
 }
 #logo img{
-  width: 4rem;
-  height: 4rem;
-}
-#top {
-  font-size: 250px;
-  font-weight: bold;
-  font-family: sans-serif;
+  width: 3rem;
+  height: 3rem;
 }
 #sub {
   font-size: 24px;
@@ -39,7 +34,7 @@
 #loginbtn,
 #signupbtn,
 #ggs {
-  padding: 0.45rem 2rem;
+  padding: 0.4rem 1.8rem;
   color: white;
   border-radius: 6px;
   font-size: 0.8em;
