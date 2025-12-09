@@ -28,13 +28,13 @@
   height: 3rem;
 }
 #sub {
-  font-size: 24px;
+  font-size: 1.4em;
   font-family: sans-serif;
 }
 #loginbtn,
 #signupbtn,
 #ggs {
-  padding: 0.4rem 1.8rem;
+  padding: 0.4rem 2rem;
   color: white;
   border-radius: 6px;
   font-size: 0.8em;
@@ -103,7 +103,8 @@
 }
 #center input {
   width: 100%;
-  padding: 10px;
+  font-size: 0.8em;
+  padding: 8px;
   border-radius: 8px;
   border: none;
   background-color: rgba(0, 0, 0, 0.05);
@@ -119,4 +120,7 @@
   display: none;
   height: 100vh;
   width: 100%;
+}
+#dd{
+  font-size: 0.8em;
 }
