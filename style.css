@@ -3,6 +3,7 @@
   padding: 0;
   color: white;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 #home {
   flex-direction: column;
@@ -19,6 +20,7 @@
   align-items: center;
   align-self: center;
   background: rgba(0, 0, 0, 1);
+  transition: 0.4s;
 }
 i{
   font-size: 1.7em;
@@ -31,7 +33,7 @@ i{
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 0.6rem 1.4grem;
+  padding: 1rem;
   width: 100%;
   background-color: rgba(0, 0, 0, 1);
 }
@@ -42,7 +44,7 @@ i{
   overflow: auto;
   align-items: center;
   display: flex;
-  padding-top: 4.2rem;
+  padding-top: 4rem;
   flex-direction: column;
   flex-wrap: wrap;
 }
@@ -69,15 +71,17 @@ i{
 }
 .q{
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);  
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .w{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 15px;
+  padding: 6px 14px;
 }
 .w p{
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
